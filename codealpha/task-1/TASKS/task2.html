@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Styled Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .display {
+      width: 100%;
+      height: 50px;
+      font-size: 1.5em;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #e0e0e0;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      grid-gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .clear {
+      background: #ff4444;
+      color: white;
+    }
+
+    .operator {
+      background-color: orange;
+      color: white;
+    }
+
+    .equal {
+      background-color: #00c851;
+      color: white;
+      grid-column: span 1;
+    }
+
+    .number {
+      background-color: #ddd;
+    }
+
+    button:hover {
+      filter: brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="display" disabled />
+    <div class="buttons">
+      <button onclick="clearDisplay()" class="clear">C</button>
+      <button onclick="appendToDisplay('/')" class="operator">÷</button>
+      <button onclick="appendToDisplay('*')" class="operator">×</button>
+      <button onclick="appendToDisplay('-')" class="operator">−</button>
+
+      <button onclick="appendToDisplay('7')" class="number">7</button>
+      <button onclick="appendToDisplay('8')" class="number">8</button>
+      <button onclick="appendToDisplay('9')" class="number">9</button>
+      <button onclick="appendToDisplay('+')" class="operator">+</button>
+
+      <button onclick="appendToDisplay('4')" class="number">4</button>
+      <button onclick="appendToDisplay('5')" class="number">5</button>
+      <button onclick="appendToDisplay('6')" class="number">6</button>
+      <button onclick="calculate()" class="equal">=</button>
+
+      <button onclick="appendToDisplay('1')" class="number">1</button>
+      <button onclick="appendToDisplay('2')" class="number">2</button>
+      <button onclick="appendToDisplay('3')" class="number">3</button>
+      <button onclick="appendToDisplay('0')" class="number">0</button>
+      <button onclick="appendToDisplay('.')" class="number">.</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function appendToDisplay(value) {
+      display.value += value;
+    }
+
+    function clearDisplay() {
+      display.value = '';
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = 'Error';
+      }
+    }
+
+    // Keyboard Support
+    document.addEventListener('keydown', function (e) {
+      const key = e.key;
+      if ('0123456789+-*/.'.includes(key)) {
+        appendToDisplay(key);
+      } else if (key === 'Enter') {
+        calculate();
+      } else if (key === 'Backspace') {
+        display.value = display.value.slice(0, -1);
+      } else if (key === 'Escape') {
+        clearDisplay();
+      }
+    });
+  </script>
+</body>
+</html>

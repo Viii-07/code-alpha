@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f39c12;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .about-text p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      background-color: #fceabb;
+      color: #d35400;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .project {
+      background: white;
+      padding: 15px;
+      margin-top: 10px;
+      border-left: 5px solid #f39c12;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #333;
+    }
+
+    a:hover {
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>My Portfolio</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section about-section">
+      <div class="about-container">
+        <img src="https://via.placeholder.com/180" alt="Profile Photo" class="profile-img">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>Hi there! 👋 I'm <strong>Vinay</strong>, a passionate and creative web developer who loves building beautiful, responsive websites and web applications. I focus on writing clean, efficient code and creating user-friendly interfaces.</p>
+          <p>I enjoy turning complex problems into simple, elegant solutions. My journey in tech started with curiosity and turned into a full-blown passion for web development.</p>
+          <p>💻 <strong>Skills & Interests:</strong><br>
+            Frontend: <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span>, <span class="highlight">React</span><br>
+            Backend: <span class="highlight">Node.js</span>, <span class="highlight">Firebase</span><br>
+            Tools: <span class="highlight">Git</span>, <span class="highlight">VS Code</span>, <span class="highlight">Figma</span><br>
+            Currently learning: <em>Next.js & UI/UX principles</em>
+          </p>
+          <p>🌱 <strong>Fun Facts:</strong><br>
+            I enjoy UI design just as much as coding.<br>
+            I love working on personal projects and learning by doing.<br>
+            Coffee + code is my perfect combo ☕💻
+          </p>
+          <p>📍 Based in: <strong>Your City, Country</strong></p>
+          <p>📫 Contact: <strong>yourname@example.com</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Project One</h3>
+        <p>A website built using HTML, CSS, and JS.</p>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>An app that tracks your daily habits.</p>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p> my resume: <a href="resume.pdf" target="_blank">Click here</a></p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <p>Email: vinayraavi143@gmail.com</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/vinay-raavi-b6a096290/">linkedin</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Portfolio loaded!");
+    });
+  </script>
+</body>
+</html>
